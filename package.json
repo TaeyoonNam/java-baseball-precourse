@@ -1,0 +1,14 @@
+{
+  "name": "java-baseball-precourse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TaeyoonNam/java-baseball-precourse.git",
+  "author": "Taeyoon <naming0617@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "standard-version": "^9.3.1"
+  }
+}
