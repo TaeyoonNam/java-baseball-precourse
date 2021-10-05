@@ -33,7 +33,66 @@ public class User {
   }
 
   private boolean userBallValidationCheck(String userBall) {
+    if (!(userBall.length() == 3)) {
+      System.out.println("[ERROR] 3자리 숫자를 입력해주시기 바랍니다.");
+      return false;
+    }
+    if (!isDigit(userBall)) {
+      return false;
+    }
+    if (!isOneToNineDigit(userBall)) {
+      return false;
+    }
+    if (!isDuplicateNumExist(userBall)) {
+      return false;
+    }
     return true;
   }
 
+  private boolean isDigit(String userBall) {
+    if (!Character.isDigit(userBall.charAt(0))
+        || !Character.isDigit(userBall.charAt(1))
+        || !Character.isDigit(userBall.charAt(2))) {
+      System.out.println("[ERROR] 숫자만 입력 할 수 있습니다.");
+      return false;
+    }
+    return true;
+  }
+
+  private boolean isOneToNineDigit(String userBall) {
+    boolean isOneToNine = true;
+    if (!(0 < Character.getNumericValue(userBall.charAt(0))
+        && Character.getNumericValue(userBall.charAt(0)) <= 9)) {
+      isOneToNine = false;
+    }
+    if (!(0 < Character.getNumericValue(userBall.charAt(1))
+        && Character.getNumericValue(userBall.charAt(1)) <= 9)) {
+      isOneToNine = false;
+    }
+    if (!(0 < Character.getNumericValue(userBall.charAt(2))
+        && Character.getNumericValue(userBall.charAt(2)) <= 9)) {
+      isOneToNine = false;
+    }
+    if (!isOneToNine) {
+      System.out.println("[ERROR] 1부터 9까지 숫자만 입력 할 수 있습니다.");
+    }
+    return isOneToNine;
+  }
+
+  private boolean isDuplicateNumExist(String userBall) {
+    Set<Character> characterSet = new HashSet<>();
+    boolean isDuplicateNumExist = true;
+    characterSet.add(userBall.charAt(0));
+    if (characterSet.contains(userBall.charAt(1))) {
+      isDuplicateNumExist = false;
+    }
+    characterSet.add(userBall.charAt(1));
+    if (characterSet.contains(userBall.charAt(2))) {
+      isDuplicateNumExist = false;
+    }
+    if (isDuplicateNumExist) {
+      System.out.println("[ERROR] 1부터 9까지 서로 다른 수를 입력해주세요.");
+    }
+    return isDuplicateNumExist;
+  }
 }
