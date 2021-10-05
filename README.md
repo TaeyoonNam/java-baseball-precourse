@@ -5,3 +5,10 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 구현할 기능 목록
+- 초기 프로젝트 셋팅
+- 상대방(컴퓨터)의 숫자 생성 
+- 사용자 숫자 입력
+- 상대방(컴퓨터)과 사용자 숫자 비교
+- 결과값 출력

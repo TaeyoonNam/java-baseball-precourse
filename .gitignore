@@ -5,6 +5,11 @@
 /out/
 /target/
 
+### node_modules ###
+/node_modules/
+package.json
+yarn.lock
+
 ### STS ###
 .apt_generated
 .classpath
