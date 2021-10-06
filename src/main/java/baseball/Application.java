@@ -3,11 +3,10 @@ package baseball;
 public class Application {
     public static void main(String[] args) {
         boolean isGaming = true;
-        Computer computer = null;
+        Computer computer = Computer.makeComputerNumber();
+
         while (isGaming) {
-            computer = new Computer();
-            String userBall = InputView.getUserBall();
-            User user = new User(userBall);
+            User user = new User(InputView.getUserNumber());
             if(!user.haveBall()) continue;
         }
     }

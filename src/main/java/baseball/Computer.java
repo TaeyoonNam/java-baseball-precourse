@@ -32,19 +32,23 @@ public class Computer {
     return ball3;
   }
 
-  public Computer() {
+  public static Computer makeComputerNumber() {
     Iterator<Integer> computerNumber = makeNumber(Randoms.pickNumberInRange(1, 9),
         Randoms.pickNumberInRange(1, 9), Randoms.pickNumberInRange(1, 9)).iterator();
     List<Integer> integerList = new ArrayList<>();
     while (computerNumber.hasNext()) {
       integerList.add(computerNumber.next());
     }
-    this.ball1 = integerList.get(0);
-    this.ball2 = integerList.get(1);
-    this.ball3 = integerList.get(2);
+    return new Computer(integerList.get(0), integerList.get(1), integerList.get(2));
   }
 
-  private Set<Integer> makeNumber(int num1, int num2, int num3) {
+  private Computer(int ball1, int ball2, int ball3) {
+    this.ball1 = ball1;
+    this.ball2 = ball2;
+    this.ball3 = ball3;
+  }
+
+  private static Set<Integer> makeNumber(int num1, int num2, int num3) {
     Set<Integer> integerSet = new LinkedHashSet<>();
     integerSet.add(num1);
     while (integerSet.contains(num2)) {

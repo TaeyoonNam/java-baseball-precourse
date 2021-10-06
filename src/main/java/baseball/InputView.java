@@ -12,7 +12,7 @@ import nextstep.utils.Console;
 public class InputView {
   private static final String gameMessage = "숫자를 입력해주세요 : ";
 
-  public static String getUserBall() {
+  public static String getUserNumber() {
     System.out.print(gameMessage);
     String userBall = Console.readLine();
     return userBall;

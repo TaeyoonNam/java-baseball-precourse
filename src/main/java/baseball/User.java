@@ -23,13 +23,13 @@ public class User {
     return ball3;
   }
 
-  public User(String userBall) {
-    if (!userBallValidationCheck(userBall)) {
+  public User(String userNumber) {
+    if (!userBallValidationCheck(userNumber)) {
       return;
     }
-    this.ball1 = Integer.parseInt(userBall.substring(0,1));
-    this.ball2 = Integer.parseInt(userBall.substring(1,2));
-    this.ball3 = Integer.parseInt(userBall.substring(2,3));
+    this.ball1 = Integer.parseInt(userNumber.substring(0,1));
+    this.ball2 = Integer.parseInt(userNumber.substring(1,2));
+    this.ball3 = Integer.parseInt(userNumber.substring(2,3));
   }
 
   public boolean haveBall() {
@@ -40,45 +40,45 @@ public class User {
   }
 
 
-  private boolean userBallValidationCheck(String userBall) {
-    if (!(userBall.length() == 3)) {
+  private boolean userBallValidationCheck(String userNumber) {
+    if (!(userNumber.length() == 3)) {
       System.out.println("[ERROR] 3자리 숫자를 입력해주시기 바랍니다.");
       return false;
     }
-    if (!isDigit(userBall)) {
+    if (!isDigit(userNumber)) {
       return false;
     }
-    if (!isOneToNineDigit(userBall)) {
+    if (!isOneToNineDigit(userNumber)) {
       return false;
     }
-    if (isDuplicateNumExist(userBall)) {
+    if (isDuplicateNumExist(userNumber)) {
       return false;
     }
     return true;
   }
 
-  private boolean isDigit(String userBall) {
-    if (!Character.isDigit(userBall.charAt(0))
-        || !Character.isDigit(userBall.charAt(1))
-        || !Character.isDigit(userBall.charAt(2))) {
+  private boolean isDigit(String userNumber) {
+    if (!Character.isDigit(userNumber.charAt(0))
+        || !Character.isDigit(userNumber.charAt(1))
+        || !Character.isDigit(userNumber.charAt(2))) {
       System.out.println("[ERROR] 숫자만 입력 할 수 있습니다.");
       return false;
     }
     return true;
   }
 
-  private boolean isOneToNineDigit(String userBall) {
+  private boolean isOneToNineDigit(String userNumber) {
     boolean isOneToNine = true;
-    if (!(0 < Character.getNumericValue(userBall.charAt(0))
-        && Character.getNumericValue(userBall.charAt(0)) <= 9)) {
+    if (!(0 < Character.getNumericValue(userNumber.charAt(0))
+        && Character.getNumericValue(userNumber.charAt(0)) <= 9)) {
       isOneToNine = false;
     }
-    if (!(0 < Character.getNumericValue(userBall.charAt(1))
-        && Character.getNumericValue(userBall.charAt(1)) <= 9)) {
+    if (!(0 < Character.getNumericValue(userNumber.charAt(1))
+        && Character.getNumericValue(userNumber.charAt(1)) <= 9)) {
       isOneToNine = false;
     }
-    if (!(0 < Character.getNumericValue(userBall.charAt(2))
-        && Character.getNumericValue(userBall.charAt(2)) <= 9)) {
+    if (!(0 < Character.getNumericValue(userNumber.charAt(2))
+        && Character.getNumericValue(userNumber.charAt(2)) <= 9)) {
       isOneToNine = false;
     }
     if (!isOneToNine) {
