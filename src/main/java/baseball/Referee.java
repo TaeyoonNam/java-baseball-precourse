@@ -32,7 +32,7 @@ public class Referee {
     if(user.getBall2() == computer.getBall2()) {
       countStrike ++;
     }
-    if(user.getBall2() == computer.getBall2()) {
+    if(user.getBall3() == computer.getBall3()) {
       countStrike ++;
     }
     return countStrike;

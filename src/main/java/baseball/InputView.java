@@ -16,8 +16,16 @@ public class InputView {
 
   public static String getUserNumber() {
     System.out.print(gameMessage);
-    String userBall = Console.readLine();
-    return userBall;
+    return Console.readLine();
+  }
+
+  public static boolean isGameRestart() {
+    System.out.println(restartGameMessage);
+    String gameRestartNum = Console.readLine();
+    if("1".equals(gameRestartNum)){
+      return true;
+    }
+    return false;
   }
 
 }

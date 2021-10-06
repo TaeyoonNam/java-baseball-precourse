@@ -4,7 +4,6 @@ public class Result {
 
   private int numberOfStrike;
   private int numberOfBall;
-  private boolean isThreeStrike;
 
   public Result(int numberOfStrike, int numberOfBall) {
     this.numberOfStrike = numberOfStrike;
@@ -21,8 +20,8 @@ public class Result {
 
   public boolean isThreeStrike() {
     if (this.numberOfStrike == 3) {
-      isThreeStrike = false;
+      return true;
     }
-    return isThreeStrike;
+    return false;
   }
 }
