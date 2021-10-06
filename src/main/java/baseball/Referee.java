@@ -12,14 +12,6 @@ public class Referee {
 
   private Referee() {}
 
-  public void setUser(User user) {
-    this.user = user;
-  }
-
-  public void setComputer(Computer computer) {
-    this.computer = computer;
-  }
-
   public static Result getStrikeResult(final User user, final Computer computer) {
     return new Result(countStrike(user, computer), countBall(user, computer));
   }
