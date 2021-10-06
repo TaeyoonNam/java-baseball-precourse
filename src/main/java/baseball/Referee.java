@@ -22,6 +22,4 @@ public class Referee {
     this.user = user;
     this.computer = computer;
   }
-
-
 }

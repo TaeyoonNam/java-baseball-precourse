@@ -5,11 +5,11 @@ import java.util.Set;
 
 public class User {
 
-  private int ball1;
+  private int ball1 = 0;
 
-  private int ball2;
+  private int ball2 = 0;
 
-  private int ball3;
+  private int ball3 = 0;
 
   public int getBall1() {
     return ball1;
@@ -27,10 +27,18 @@ public class User {
     if (!userBallValidationCheck(userBall)) {
       return;
     }
-    this.ball1 = userBall.charAt(0);
-    this.ball2 = userBall.charAt(1);
-    this.ball3 = userBall.charAt(2);
+    this.ball1 = Integer.parseInt(userBall.substring(0,1));
+    this.ball2 = Integer.parseInt(userBall.substring(1,2));
+    this.ball3 = Integer.parseInt(userBall.substring(2,3));
   }
+
+  public boolean haveBall() {
+    if(ball1 == 0 || ball2 == 0 || ball3 == 0) {
+      return false;
+    }
+    return true;
+  }
+
 
   private boolean userBallValidationCheck(String userBall) {
     if (!(userBall.length() == 3)) {
@@ -43,7 +51,7 @@ public class User {
     if (!isOneToNineDigit(userBall)) {
       return false;
     }
-    if (!isDuplicateNumExist(userBall)) {
+    if (isDuplicateNumExist(userBall)) {
       return false;
     }
     return true;
@@ -81,14 +89,14 @@ public class User {
 
   private boolean isDuplicateNumExist(String userBall) {
     Set<Character> characterSet = new HashSet<>();
-    boolean isDuplicateNumExist = true;
+    boolean isDuplicateNumExist = false;
     characterSet.add(userBall.charAt(0));
     if (characterSet.contains(userBall.charAt(1))) {
-      isDuplicateNumExist = false;
+      isDuplicateNumExist = true;
     }
     characterSet.add(userBall.charAt(1));
     if (characterSet.contains(userBall.charAt(2))) {
-      isDuplicateNumExist = false;
+      isDuplicateNumExist = true;
     }
     if (isDuplicateNumExist) {
       System.out.println("[ERROR] 1부터 9까지 서로 다른 수를 입력해주세요.");
